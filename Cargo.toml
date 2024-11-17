@@ -1,0 +1,14 @@
+[package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Bitnet Template"]
+name = "bitnet_rs_template"
+description = "Minimal Rust needed to use `bitnet-cpp-rs` as a dependency."
+
+[[bin]]
+name = "bitnet_rs_template"
+path = "src/main.rs"
+
+[dependencies]
+# bitnet-cpp = { git = "https://github.com/eugenehp/bitnet-cpp-rs"}
+bitnet-cpp = { git = "https://github.com/noppej/bitnet-cpp-rs", branch = "fix_submodule" }

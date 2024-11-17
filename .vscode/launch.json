@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "preLaunchTask": "rust: cargo build",
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch Test",
+            "program": "${workspaceFolder}/target/debug/bitnet-rs-template",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false
+        }
+    ]
+}
