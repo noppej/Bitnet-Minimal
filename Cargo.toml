@@ -10,5 +10,4 @@ name = "bitnet_rs_template"
 path = "src/main.rs"
 
 [dependencies]
-# bitnet-cpp = { git = "https://github.com/eugenehp/bitnet-cpp-rs"}
-bitnet-cpp = { git = "https://github.com/noppej/bitnet-cpp-rs", branch = "fix_submodule" }
+bitnet-cpp-sys = "0.0.4"

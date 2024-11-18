@@ -7,17 +7,8 @@ services:
     restart: no
     volumes:
     - ..:/app/BitNet-Minimal
-    command: >
-      bash -c " 
-      apt-get update && apt-get install -y passwd grep \python3 python3-pip  cmake lsb-release software-properties-common
-      && rm -rf /var/lib/apt/lists/* 
-      && wget -qO- https://apt.llvm.org/llvm.sh | bash -s -- 18
-      && ln -s /usr/bin/clang-18 /usr/bin/clang
-      && rustup component add clippy 
-      && rustup component add rustfmt 
-      && rustup component add rust-analyzer 
-      && wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py311_24.9.2-0-Linux-aarch64.sh -O ~/miniconda.sh 
-      && /bin/bash ~/miniconda.sh -b -p /opt/conda
-      && ln -s /opt/conda/bin/conda /usr/bin
-      && tail -f /dev/null"
+    environment:
+    - CC=/usr/bin/clang-18
+    - CXX=/usr/bin/clang++-18
+    entrypoint: /app/BitNet-Minimal/.devcontainer/setup_env.sh
     
